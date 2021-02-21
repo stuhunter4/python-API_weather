@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stuart Hunter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+     /* Remove the navbar's default margin-bottom and rounded borders */ 
+     .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    .fonts14 {
+      font-size: 14pt;
+    }
+
+    .white {
+        color: white;
+    }
+
+    .dpurp {
+      background-color: #3c345c;
+    }
+
+    .green {
+      background-color: #5da4a6;
+    }
+
+    .purp {
+      background-color: #625c76;
+    }
+
+    .viol {
+      background-color: #a0a8d9;
+    }
+
+    .lpurp {
+      background-color: #b8aec8;
+    }
+
+    .space {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    
+    .j_space {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .rcorners {
+      border-radius: 10px;
+    }
+
+    .grey {
+      background-color: #2b3137;
+    }
+    
+    .padded {
+      padding-top: 75px;
+    }
+
+    #hide_me {
+      display: none;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    table {
+      font-family: arial, sans-serif;
+    }
+  
+    td, th {
+      border: 1px solid #e9e9e9;
+      text-align: left;
+      padding: 8px;
+    }
+  
+    #table-area th:first-child,
+    #table-area th:nth-child(2),
+    #table-area th:nth-child(6) {
+      min-width: 70px;
+    }
+
+    @media screen and (max-width: 1300px) {
+      .vanish {
+        display: none;
+      }
+      .row.content {height: auto;}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container-fluid">
+      <nav class="navbar navbar-fixed-top purp">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle viol" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand white" href="https://stuhunter4.github.io/hunterStuff/index.html">STUART HUNTER</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a class="white fonts14" href="#">About</a></li>
+              <li><a class="white fonts14" href="https://www.linkedin.com/in/smhunterart/">LinkedIn</a></li>
+              <li><a class="white fonts14" href="https://github.com/stuhunter4">Github</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid padded">
+        <div class="row content">
+            <div class="container">
+                <div class="container-fluid">
+                    <div class="row container-fluid">
+                        <div class="col-sm-3">
+                            <div class="well dpurp white">
+                                <h2>Python API Challenge</h2>
+                                <p>This challenge looks at examining what the weather is like as we approach the equator, using Python requests, APIs, and JSON traversals.</p>
+                                <p>Source: Open Weather Map API   <a href="https://openweathermap.org/api" target="_blank">View details &raquo;</a></p>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <div class="well">
+                                <p>Looking at the scatter plot for Temperature vs. Latitude, all the highest temperature values are located in the -20 to 20 range of latitude, closest to the equator. Lower ranges of temperature readings corresponded to latitude ranges further from the equator (e.g. -40 to -20 and 20 to 40 range was colder than close to the equator, and so on).</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/Latitude_v_Temperature.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/Latitude_v_Humidity.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/Latitude_v_Cloudiness.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/Latitude_v_WindSpeed.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <div class="well">
+                                <p>The linear regression plots reflected the same trend of temperature increasing the closer to the equator we moved, and decreased the further from the equator we moved. This was true whether moving North or South from the equator.</p>
+                                <p>The regression lines and r-values for the remaining variable vs. Latitude plots did not indicate any meaningful trends in our sample of cities. Latitude, or distance from the equator, was not a good predictor of Humidity, Cloudiness, or Wind Speed.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/North_Lat_v_MaxTemp_LinR.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/South_Lat_v_MaxTemp_LinR.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/North_Lat_v_Humid_LinR.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/South_Lat_v_Humid_LinR.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/North_Lat_v_Cloud_LinR.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/South_Lat_v_Cloud_LinR.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/North_Lat_v_WindSpeed_LinR.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="well">
+                                <img src="output_data/South_Lat_v_WindSpeed_LinR.png" class="img-responsive rcorners" style="width:100%" alt="Image">
+                              </div>
+                            </div>
+                          </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>  
+       
+<footer class="container-fluid">
+  <div class="row">
+      <div class="col-sm-12 ml-md-auto">
+          <p class="text-center fonts14"><a class="white" href="https://www.linkedin.com/in/smhunterart/">LinkedIn</a>  ·  <a class="white" href="https://github.com/stuhunter4">Github</a></p>
+      </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+</body>
+</html>      
