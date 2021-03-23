@@ -3,7 +3,7 @@ Seeking to utilize Python requests, APIs, and JSON traversals to answer question
 
 **WeatherPy.ipynb:** Python script created to visualize the weather of 643 randomly selected cities across the world of varying distance from the equator; accomplished using data from the OpenWeatherMapAPI to create a representative model of weather across world cities.  Scatter plots of relationships, linear regression plots, and analysis in this notebook, and online here: 
 
-https://stuhunter4.github.io/python-api-challenge/WeatherPy/WeatherPy.html
+https://stuhunter4.github.io/python-API_weather/WeatherPy/WeatherPy.html
 
 - - -
 ![heatmap](WeatherPy/output_data/HeatMap_small.jpg)
