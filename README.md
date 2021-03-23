@@ -6,6 +6,6 @@ Seeking to utilize Python requests, APIs, and JSON traversals to answer question
         https://stuhunter4.github.io/python-api-challenge/WeatherPy/WeatherPy.html
 
 - - -
-![heatmap](WeatherPy/output_data/HeatMap_small.JPG)
+![heatmap](WeatherPy/output_data/HeatMap_small.jpg)
 
 **VacationPy.ipynb:** The second part of this challenge used a CSV file created in WeatherPy.ipynb, jupyter-gmaps and the Google Places API.  The final product of this is a heat map that displays humidity for each of the 643 cities.  API requests determined the first hotel within 5000 meters in cities that fall display ideal weather conditions, defined as having a max temperature lower than 80 degrees but higher than 70, wind speed less than 10 mph, and zero cloudiness.  The full-size heatmap can be found under /output_data/Humidity_HeatMap.png
